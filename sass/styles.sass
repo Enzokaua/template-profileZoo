@@ -1,0 +1,161 @@
+@use 'variables' as var
+@use 'mixins' as mix
+@import url("https://fonts.googleapis.com/css?family=Poppins")
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    font-family: 'Poppins'
+
+body
+    background-color: var.$bg-color
+    color: var.$text-color
+    @include mix.mobile
+        text-align: center
+
+    a
+        color: var.$text-color
+        text-decoration: none
+        transition: .4s
+
+    ul
+        list-style: none
+
+.header 
+    display: flex
+    justify-content: space-between
+    @include mix.container 
+    // SEMPRE QUE HOUVER REPETICAO DE CODIGO, ACONSELHAVEL USAR UM MIXIN
+    @include mix.mobile
+        display: flex
+        align-items: center
+        justify-content: center
+
+    &-brand //ele entende que isso é o nome da classe pai, + o conteudo que virá a seguir, juntando como somente um nome de classe
+        color: var.$primary-color
+        font-size: 3rem //tamanho referente ao tamanho do header
+    
+    &-navbar 
+        ul
+            height: 100%
+            @include mix.flex-center
+            @include mix.mobile
+                display: none
+
+            li
+                margin: 0 1rem
+                text-transform: uppercase
+                font-size: .8rem
+
+                .active
+                    color: var.$secondary-color
+                
+                a
+                    &:hover
+                        color: var.$secondary-color
+
+
+    &-social-media
+        ul
+            @include mix.flex-center
+            height: 100%
+            @include mix.mobile
+                display: none
+
+            li
+                margin: 0 1rem
+
+                a
+                    &:hover
+                        color: var.$primary-color
+
+
+.gallery
+    @include mix.flex-center
+    @include mix.container
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 0
+    text-align: center
+    @include mix.mobile
+        flex-direction: column
+        align-items: center
+        justify-content: center
+    
+    &-card
+        width: 31%
+        height: 300px
+        flex-direction: column
+        margin-bottom: 4%
+        @include mix.flex-center
+        color: var.$primary-color
+        @include mix.mobile
+            width: 90%
+            margin-bottom: 6%
+
+        &-title
+            font-size: 2rem
+            font-weight: 300
+            margin-bottom: 1rem
+
+        &-btn
+            padding: .6rem 2rem
+            border: 2px solid var.$primary-color
+            color: var.$primary-color 
+            font-weight: 400
+            text-transform: uppercase
+            letter-spacing: 1px
+            justify-content: center
+            margin: 2em
+
+            &:hover
+                background-color: var.$secondary-color
+                color: var.$bg-color
+
+
+    #card-1
+        @include mix.bg-img('animais.jpg')
+        @include mix.padraoBackground    
+
+
+    #card-2
+        @include mix.bg-img('arquitetura.jpg')
+        @include mix.padraoBackground    
+    #card-3
+        @include mix.bg-img('cidade.jpg')
+        @include mix.padraoBackground
+
+    #card-4
+        @include mix.bg-img('decoracao.jpg')
+        @include mix.padraoBackground
+
+    #card-5
+        @include mix.bg-img('esportes.jpg')
+        @include mix.padraoBackground
+
+    #card-6
+        @include mix.bg-img('natureza.jpg')
+        @include mix.padraoBackground
+        
+
+    #card-7
+        @include mix.bg-img('paisagem.jpg')
+        @include mix.padraoBackground
+
+    #card-8
+        @include mix.bg-img('pessoas.jpg')
+        @include mix.padraoBackground
+
+    #card-9
+        @include mix.bg-img('refeicoes.jpg')
+        @include mix.padraoBackground
+        
+
+footer
+  text-align: center
+  padding-bottom: 2rem
+
+  span
+    font-weight: bold
+    color: var.$secondary-color
