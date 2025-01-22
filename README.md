@@ -10,6 +10,6 @@ Exemplo:
 
 As tecnologias deste projeto, são:
 
-- *SASS* (versão X)
-- *HTML5* (versão X)
-- *CSS3* (versão X)
+- *SASS*
+- *HTML5* 
+- *CSS3* 
